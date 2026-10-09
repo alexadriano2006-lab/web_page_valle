@@ -85,7 +85,7 @@ textarea:focus-visible {
   align-items: center;
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--white);
   backdrop-filter: blur(10px);
   z-index: 10;
   
@@ -941,3 +941,111 @@ textarea {
     transition: none !important;
   }
 }
+
+/* Classes exclusivas para evitar conflitos com outras páginas. */
+.footer-valle {
+    --footer-laranja: #ef6b26;
+    --footer-texto: #242424;
+    --footer-secundario: #555;
+
+    padding: 48px 24px 24px;
+    border-top: 3px solid var(--footer-laranja);
+    background: #fff;
+    color: var(--footer-texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-valle,
+.footer-valle * {
+    box-sizing: border-box;
+}
+
+/* Conteúdo centralizado com três colunas. */
+.footer-valle__conteudo {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-valle__marca {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--footer-texto);
+    text-decoration: none;
+}
+
+.footer-valle__marca span {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.footer-valle__marca small {
+    margin-top: 6px;
+    color: #a64010;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+}
+
+.footer-valle__empresa p {
+    max-width: 340px;
+    margin: 20px 0 0;
+    color: var(--footer-secundario);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.footer-valle h2 {
+    margin: 0 0 18px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.footer-valle__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-valle__links h2 {
+    margin-bottom: 8px;
+}
+
+.footer-valle__links a {
+    color: var(--footer-secundario);
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.footer-valle__links a:hover {
+    color: #a64010;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer-valle a:focus-visible {
+    outline: 2px solid var(--footer-laranja);
+    outline-offset: 5px;
+    border-radius: 2px;
+}
+
+.footer-valle__atuacao ul {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--footer-secundario);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Faixa inferior com direitos autorais e assinatura. */
+
