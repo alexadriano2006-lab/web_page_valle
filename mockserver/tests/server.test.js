@@ -34,7 +34,7 @@ for (const pasta of ["public", "admin"]) {
     assert.match(pagina.headers.get("content-type"), /text\/html/);
     const html = await pagina.text();
     assert.match(html, /<!doctype html>/i);
-    if (pasta === "public") assert.match(html, /datetime="1986-04-14">14\/04\/1986/);
+    if (pasta === "public") assert.match(html, /datetime="1986">1986/);
 
     const raiz = new URL(`../${pasta}/`, import.meta.url);
     const arquivosHtml = (await readdir(raiz, { recursive: true })).filter((arquivo) => arquivo.endsWith(".html"));
