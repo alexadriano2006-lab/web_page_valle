@@ -235,30 +235,53 @@
 .introducao-site {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
   gap: 72px;
   padding-block: 72px 88px;
 }
 
 .titulo-introducao h1 {
   max-width: 480px;
-  margin-bottom: 20px;
-  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  margin-bottom: 28px;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
   letter-spacing: -0.04em;
   line-height: 1.2;
 }
 
+.titulo-introducao h1 span {
+  color: var(--laranja-escuro);
+}
+
 .fundacao-valle {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
   margin: 0;
-  padding: 8px 14px;
+  padding: 4px 0 4px 16px;
   border-left: 3px solid var(--laranja);
-  background: #fff5ee;
-  color: var(--texto);
-  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+.fundacao-valle > span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .fundacao-valle time {
+  color: var(--texto);
+  font-size: 22px;
   font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.texto-introducao {
+  max-width: 580px;
+}
+
+.texto-introducao p:last-child {
+  margin-bottom: 0;
 }
 
 .texto-introducao p {
@@ -408,7 +431,7 @@
 
   .introducao-site {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 28px;
     padding-block: 54px 64px;
   }
 
