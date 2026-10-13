@@ -2,7 +2,22 @@ import assert from "node:assert/strict";
 import { once } from "node:events";
 import { readdir, readFile } from "node:fs/promises";
 import test from "node:test";
+import { runInNewContext } from "node:vm";
 import { criarAplicacao } from "../static-server.js";
+
+test("Páginas antigas redirecionam preservando o prefixo, parâmetros e âncoras", async () => {
+  for (const [arquivo, destino] of [["sobre-valle", "sobre"], ["servicos", "servicos"], ["veiculos", "veiculos"]]) {
+    const html = await readFile(new URL(`../public/paginas/${arquivo}.html`, import.meta.url), "utf8");
+    const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+    for (const prefixo of ["/", "/web_page_valle/"]) {
+      const location = new URL(`https://example.com${prefixo}paginas/${arquivo}.html?origem=menu#conteudo`);
+      let endereco;
+      location.replace = (url) => { endereco = url; };
+      runInNewContext(script, { URL, window: { location } });
+      assert.equal(endereco, `https://example.com${prefixo}${destino}/?origem=menu#conteudo`);
+    }
+  }
+});
 
 test("Endereços alternativos de Serviços redirecionam para a página correta", async (t) => {
   const server = criarAplicacao("public").listen(0, "127.0.0.1");
@@ -13,12 +28,12 @@ test("Endereços alternativos de Serviços redirecionam para a página correta",
   for (const caminho of ["/paginas/servicos", "/pagninas/servicos", "/pagninas/servicos.html"]) {
     const redirecionamento = await fetch(`${endereco}${caminho}`, { redirect: "manual" });
     assert.equal(redirecionamento.status, 302);
-    assert.equal(redirecionamento.headers.get("location"), "/paginas/servicos.html");
+    assert.equal(redirecionamento.headers.get("location"), "/servicos/");
     await redirecionamento.text();
 
     const pagina = await fetch(`${endereco}${caminho}`);
     assert.equal(pagina.status, 200);
-    assert.equal(pagina.url, `${endereco}/paginas/servicos.html`);
+    assert.equal(pagina.url, `${endereco}/servicos/`);
     assert.match(await pagina.text(), /<title>Serviços \| Valle Viação<\/title>/);
   }
 });

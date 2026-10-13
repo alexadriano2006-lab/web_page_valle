@@ -7,9 +7,9 @@ Para abrir o painel demonstrativo, execute `npm run start:admin` e acesse `http:
 ## Páginas
 
 - `index.html`: página inicial.
-- `paginas/sobre-valle.html`: apresentação institucional e artigos.
-- `paginas/servicos.html`: serviços de transporte.
-- `paginas/veiculos.html`: categorias de veículos.
+- `sobre/index.html`: apresentação institucional e artigos.
+- `servicos/index.html`: serviços de transporte.
+- `veiculos/index.html`: categorias de veículos.
 
 ## Estilos e scripts
 
@@ -21,3 +21,5 @@ Para abrir o painel demonstrativo, execute `npm run start:admin` e acesse `http:
 - `scripts/menu.js`: menu em telas menores e carrossel com setas, pausa automática durante a interação e respeito à preferência por movimento reduzido.
 
 Os perfis de redes sociais estão identificados no rodapé, aguardando os links oficiais. Não há formulário de cotação nem backend integrado; os botões de contato direcionam para o WhatsApp.
+
+Os links públicos usam `/sobre/`, `/servicos/` e `/veiculos/`. Os arquivos antigos em `paginas/` redirecionam para os novos endereços, preservando parâmetros e âncoras.

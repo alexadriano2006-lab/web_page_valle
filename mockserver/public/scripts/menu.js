@@ -1,3 +1,9 @@
+if (/^https?:$/.test(window.location.protocol) && window.location.pathname.endsWith("/index.html")) {
+  const endereco = new URL(window.location.href);
+  endereco.pathname = endereco.pathname.slice(0, -"index.html".length);
+  window.history.replaceState(window.history.state, "", endereco.href);
+}
+
 document.querySelectorAll(".cabecalho").forEach((cabecalho) => {
   const botaoMenu = cabecalho.querySelector(".botao-menu");
   const navegacao = cabecalho.querySelector(".navegacao-principal");

@@ -6,7 +6,7 @@ export function criarAplicacao(pasta) {
   app.disable("x-powered-by");
   if (pasta === "public") {
     app.get(["/paginas/servicos", "/pagninas/servicos", "/pagninas/servicos.html"], (_req, res) => {
-      res.redirect(302, "/paginas/servicos.html");
+      res.redirect(302, "/servicos/");
     });
   }
   app.use(express.static(fileURLToPath(new URL(`./${pasta}/`, import.meta.url))));
