@@ -1,0 +1,16 @@
+.finance-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.finance-summary .metric-card { padding: 14px 16px; }
+.finance-summary .metric-value { font-size: 21px; }
+
+@media (max-width: 760px) {
+  .finance-summary { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .finance-summary { grid-template-columns: 1fr; }
+}

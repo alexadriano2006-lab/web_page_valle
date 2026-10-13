@@ -5,44 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conheça a Valle Viação e nossa missão no transporte escolar, fretamento e turismo.">
     <title>Quem somos | Valle Viação</title>
-    <!-- O CSS fica na mesma pasta deste arquivo HTML. -->
-    <link rel="stylesheet" href="../../styles/sobre/sobre.css">
-    <link rel="stylesheet" href="../../styles.css">
-
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/sobre.css">
+    <script src="../scripts/menu.js" defer></script>
 </head>
 <body>
-    <!-- Identificação da empresa; substitua pelo nav compartilhado do site. -->
-    <header class="header">
-      <a class="brand" href="../../index.html" aria-label="Valle Viação — início">
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
 
-        <img src="../../img/Logo Valle com montanha e sol.png" 
-        alt="Descrição da imagem"
-        width = "110"
-        height = "90">
-
+    <header class="cabecalho">
+      <a class="marca" href="../index.html" aria-label="Valle Viação — início">
+        <img
+          src="../img/Logo Valle com montanha e sol.png"
+          alt="Valle Viação"
+          width="110"
+          height="90"
+        >
       </a>
-
-      <button
-        class="menu-toggle"
-        aria-expanded="false"
-        aria-controls="navegacao"
-      >
-        Menu ☰
+      <button class="botao-menu" type="button" aria-expanded="false" aria-controls="navegacao">
+        Menu <span aria-hidden="true">☰</span>
       </button>
-
-      <nav id="navegacao" aria-label="Principal">
-        <a href="../../index.html">A Valle</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#veiculos">Veículos</a>
-        <a class="button small" href="https://api.whatsapp.com/send/?phone=5511933862321&text&type=phone_number&app_absent=0">Solicitar cotação ↗</a>
+      <nav class="navegacao-principal" id="navegacao" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="sobre-valle.html" aria-current="page">A Valle</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="veiculos.html">Veículos</a>
+        <a class="botao botao-pequeno" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">Solicitar cotação ↗</a>
       </nav>
     </header>
 
-    <main class="container">
-        <!-- Apresentação institucional com base nas áreas de atuação da Valle. -->
-        <section class="introducao" aria-labelledby="titulo-quem-somos">
-            <h1 class="etiqueta">Quem somos?</h1>
-            <h2 id="titulo-quem-somos">Cuidamos do caminho que conecta pessoas.</h2>
+    <main id="conteudo" class="conteudo-limitado pagina-sobre">
+        <section class="introducao" id="apresentacao" aria-labelledby="titulo-quem-somos">
+            <p class="etiqueta">Quem somos?</p>
+            <h1 id="titulo-quem-somos">Cuidamos do caminho que conecta pessoas.</h1>
             <div class="apresentacao">
                 <p>A Valle Viação é uma empresa voltada à gestão de soluções de transporte, com atuação no fretamento de ônibus, no transporte escolar e na organização de veículos para turismo e viagens particulares. Nosso papel é conectar as necessidades de cada operação aos recursos necessários para realizar os deslocamentos com responsabilidade.</p>
                 <p>Além da gestão de veículos, nosso trabalho envolve a organização das operações e o acompanhamento de empresas parceiras de fretamento. Buscamos alinhar o planejamento dos trajetos, as necessidades dos passageiros e a execução dos serviços, com atenção à segurança, à qualidade do atendimento e à pontualidade.</p>
@@ -51,7 +45,7 @@
             </div>
         </section>
 
-        <!-- Proposta de missão: validar o texto institucional antes da publicação. -->
+        <!-- Validar este texto institucional antes da publicação. -->
         <section class="missao" aria-labelledby="titulo-missao">
             <p class="etiqueta">O que nos move</p>
             <h2 id="titulo-missao">Nossa missão</h2>
@@ -59,22 +53,21 @@
             <p>Essa missão orienta o cuidado com o planejamento das operações, a relação com empresas parceiras e a atenção aos passageiros. Buscamos tornar os deslocamentos mais organizados e tranquilos, contribuindo tanto para a rotina de quem utiliza nossos serviços quanto para as experiências de quem viaja conosco.</p>
         </section>
 
-        <!-- Áreas de atuação organizadas em blocos independentes para manutenção. -->
-        <section class="atuacao" aria-labelledby="titulo-atuacao">
+        <section class="atuacao" id="atuacao" aria-labelledby="titulo-atuacao">
             <p class="etiqueta">Nossa atuação</p>
             <h2 id="titulo-atuacao">Diferentes trajetos. O mesmo compromisso.</h2>
-            <div class="cards">
-                <article class="card">
+            <div class="cartoes">
+                <article class="cartao">
                     <span class="numero" aria-hidden="true">01</span>
                     <h3>Fretamento</h3>
                     <p>Organizamos soluções de fretamento para empresas e grupos, considerando a finalidade do deslocamento e as necessidades de cada viagem. Nossa atuação inclui a gestão das operações e de empresas parceiras que participam da prestação dos serviços.</p>
                 </article>
-                <article class="card">
+                <article class="cartao">
                     <span class="numero" aria-hidden="true">02</span>
                     <h3>Transporte escolar</h3>
                     <p>Por meio do TEG Cotia, atuamos no transporte escolar municipal. Essa frente exige atenção à rotina dos estudantes, organização dos trajetos e compromisso com o cuidado no deslocamento entre a comunidade e a escola.</p>
                 </article>
-                <article class="card">
+                <article class="cartao">
                     <span class="numero" aria-hidden="true">03</span>
                     <h3>Turismo e viagens</h3>
                     <p>A Valle Trips é nossa frente dedicada ao turismo e às viagens, com foco em passeios, excursões, eventos e deslocamentos particulares. Buscamos apoiar grupos na organização do transporte para que aproveitem o destino e os momentos compartilhados.</p>
@@ -82,33 +75,33 @@
             </div>
         </section>
 
-        <!-- Conteúdo editorial: os links levam às seções desta página. -->
-        <nav class="indice-blog" aria-label="Temas do blog">
+        <nav class="indice-artigos" aria-label="Temas dos artigos">
             <a href="#tecnologia">Tecnologia NFC</a>
             <a href="#seguranca">Segurança escolar</a>
             <a href="#prefeitura">Gestão pública</a>
-            <a href="#trips">Valle Trips</a>
+            <a href="#valle-trips">Valle Trips</a>
         </nav>
 
-        <section class="blog" aria-labelledby="titulo-blog">
+        <section class="artigos" aria-labelledby="titulo-artigos">
             <p class="etiqueta">Por dentro da Valle</p>
-            <h2 id="titulo-blog">Pessoas, tecnologia e experiências em movimento.</h2>
-            <p class="resumo-blog">Conheça os cuidados que fazem parte do transporte escolar e descubra nossa atuação no turismo.</p>
+            <h2 id="titulo-artigos">Pessoas, tecnologia e experiências em movimento.</h2>
+            <p class="resumo-artigos">Conheça os cuidados que fazem parte do transporte escolar e descubra nossa atuação no turismo.</p>
 
-            <article class="artigo-blog" id="tecnologia">
+            <article class="artigo" id="tecnologia">
                 <header>
                     <p class="etiqueta">Tecnologia · TEG Cotia</p>
                     <h3>Identificação por NFC: mais organização no embarque</h3>
                     <p class="abertura-artigo">Um registro por aproximação ajuda a acompanhar a rotina de embarque dos estudantes.</p>
                 </header>
-                <!-- Para inserir uma foto, substitua o div abaixo por:
-                <img src="../../img/embarque-nfc.jpg" alt="Estudante aproximando sua identificação do leitor durante o embarque" loading="lazy" width="1200" height="675">
-                -->
-                <figure class="foto-blog">
+                <figure class="imagem-artigo">
                     <div class="espaco-imagem">
-                        <img src= "../../img/Leitura NFC do crachá escolar.png"
-                        width="1200"
-                        height="680">
+                        <img
+                            src="../img/Leitura NFC do crachá escolar.png"
+                            alt="Leitor NFC utilizado no embarque do transporte escolar"
+                            width="1200"
+                            height="680"
+                            loading="lazy"
+                        >
                     </div>
                     <figcaption>Tecnologia a serviço da organização do transporte escolar.</figcaption>
                 </figure>
@@ -117,18 +110,21 @@
                 <p>O registro digital complementa o trabalho da equipe. A orientação das monitoras, a conferência dos estudantes e o registro das situações que precisam de atenção continuam sendo essenciais para uma operação organizada.</p>
             </article>
 
-            <article class="artigo-blog" id="seguranca">
+            <article class="artigo" id="seguranca">
                 <header>
                     <p class="etiqueta">Cuidado · Transporte escolar</p>
                     <h3>Segurança começa antes de chegar à escola</h3>
                     <p class="abertura-artigo">Cada etapa do trajeto pede atenção: da espera pelo veículo ao desembarque.</p>
                 </header>
-                <!-- Substitua o espaço abaixo por uma imagem da operação escolar. -->
-                <figure class="foto-blog">
+                <figure class="imagem-artigo">
                     <div class="espaco-imagem">
-                        <img src = "../../img/busaoteg.png"
-                        width="1200"
-                        height="680">
+                        <img
+                            src="../img/busaoteg.png"
+                            alt="Ônibus utilizado no transporte escolar do TEG Cotia"
+                            width="1200"
+                            height="680"
+                            loading="lazy"
+                        >
                     </div>
                     <figcaption>O cuidado com os estudantes acompanha todo o trajeto.</figcaption>
                 </figure>
@@ -137,33 +133,32 @@
                 <p>Como orientação aos passageiros, é importante aguardar em local seguro, embarcar com calma, utilizar o cinto de segurança e seguir as instruções da monitora. A tecnologia apoia os registros, enquanto o cuidado das pessoas orienta as decisões do dia a dia.</p>
             </article>
 
-            <article class="artigo-blog" id="prefeitura">
+            <article class="artigo" id="prefeitura">
                 <header>
                     <p class="etiqueta">Comunidade · Gestão pública</p>
                     <h3>Transporte escolar e a participação da Prefeitura</h3>
                     <p class="abertura-artigo">O transporte escolar municipal faz parte do cuidado com o acesso dos estudantes à educação.</p>
                 </header>
-                <!-- Não atribuir falas, visitas ou entregas ao prefeito sem confirmação.
-                     Inserir aqui foto autorizada e legenda factual do evento. -->
+                <!-- Publique ações e imagens somente após confirmar os fatos e obter autorização de uso. -->
                 <p>O TEG Cotia está ligado à rotina do transporte escolar municipal. Nesse contexto, o diálogo entre a gestão pública, as escolas, as famílias e a equipe de operação é importante para identificar necessidades e acompanhar situações que afetam o deslocamento dos estudantes.</p>
                 <p>A Valle atua na gestão da operação, com atenção à organização do serviço e à comunicação necessária para o atendimento. A articulação com a Prefeitura e com a área de educação deve respeitar as responsabilidades de cada parte, mantendo o foco nas necessidades dos alunos.</p>
                 <p>Ações institucionais, reuniões e iniciativas relacionadas ao transporte podem ser apresentadas neste espaço, aproximando a comunidade do trabalho realizado e dando visibilidade às informações relevantes para as famílias.</p>
-                <!-- Acrescentar a participação específica do prefeito após receber:
-                     nome, ação realizada, data, local e fonte ou relato confirmado. -->
             </article>
 
-            <article class="artigo-blog" id="trips">
+            <article class="artigo" id="valle-trips">
                 <header>
-                    
                     <h3>Valle Trips: experiências que ficam</h3>
                     <p class="abertura-artigo">Novos destinos, momentos compartilhados e o prazer de viajar em grupo.</p>
                 </header>
-                <!-- Substitua o espaço abaixo por uma foto de viagem ou da frota. -->
-                <figure class="foto-blog">
+                <figure class="imagem-artigo">
                     <div class="espaco-imagem">
-                        <img src= "../../img/Volare Fly10 em destaque no pátio.png"
-                        width="1200"
-                        height="680">
+                        <img
+                            src="../img/Volare Fly10 em destaque no pátio.png"
+                            alt="Veículo da Valle estacionado no pátio"
+                            width="1200"
+                            height="680"
+                            loading="lazy"
+                        >
                     </div>
                     <figcaption>Cada destino pode ser o começo de uma nova história.</figcaption>
                 </figure>
@@ -175,8 +170,52 @@
         </section>
     </main>
 
-    <footer class="rodape">
-        <div class="container"><p>Valle Viação Ltda · Segurança, qualidade e compromisso em cada trajeto.</p></div>
+    <footer class="rodape-site">
+        <div class="rodape-conteudo">
+            <section class="rodape-marca" aria-label="Sobre a Valle Viação">
+                <h2>Valle Viação</h2>
+                <p>Conectamos pessoas aos seus destinos com cuidado em cada trajeto.</p>
+            </section>
+
+            <nav class="rodape-coluna" aria-label="Seções do site">
+                <h2>Explore</h2>
+                <a href="../index.html#inicio">Início</a>
+                <a href="#apresentacao">A Valle</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="veiculos.html">Veículos</a>
+            </nav>
+
+            <nav class="rodape-coluna" aria-label="Áreas de atuação">
+                <h2>Nossa atuação</h2>
+                <a href="servicos.html#fretamento">Fretamento empresarial</a>
+                <a href="servicos.html#turismo">Turismo e viagens</a>
+                <a href="servicos.html#eventos">Eventos e grupos</a>
+                <a href="servicos.html#transporte-escolar">Transporte escolar</a>
+                <a href="servicos.html#translado">Translado</a>
+            </nav>
+
+            <section class="rodape-coluna rodape-contato" aria-labelledby="titulo-contato-rodape">
+                <h2 id="titulo-contato-rodape">Fale com a gente</h2>
+                <p>Entre em contato para conversar sobre o transporte do seu grupo.</p>
+                <a class="link-whatsapp" href="https://api.whatsapp.com/send/?phone=5511933862321&text&type=phone_number&app_absent=0">
+                    Atendimento pelo WhatsApp <span aria-hidden="true">↗</span>
+                </a>
+                <a class="link-email" href="mailto:atendimento@valleviacao.com.br">
+                    <span class="rotulo-contato">E-mail</span>
+                    atendimento@valleviacao.com.br
+                </a>
+                <h3>Redes sociais</h3>
+                <div class="redes-sociais" aria-label="Perfis sociais a configurar">
+                    <span>Instagram</span>
+                    <span>Facebook</span>
+                </div>
+            </section>
+        </div>
+
+        <div class="rodape-base">
+            <p>© 2026 Valle Viação. Todos os direitos reservados.</p>
+            <a href="#apresentacao">Conheça a Valle</a>
+        </div>
     </footer>
 </body>
 </html>

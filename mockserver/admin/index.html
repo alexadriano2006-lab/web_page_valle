@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f8f6">
+    <meta name="description" content="Painel administrativo Valle Viação">
+    <title>Painel administrativo | Valle Viação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/pages/geral.css">
+    <link rel="stylesheet" href="styles/pages/financas.css">
+    <script src="scripts/data.js" defer></script>
+    <script src="scripts/utils.js" defer></script>
+    <script src="scripts/components.js" defer></script>
+    <script src="scripts/pages/geral.js" defer></script>
+    <script src="scripts/pages/cotacoes.js" defer></script>
+    <script src="scripts/pages/veiculos.js" defer></script>
+    <script src="scripts/pages/financas.js" defer></script>
+    <script src="scripts/pages/usuarios.js" defer></script>
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="menu-lateral">
+        <a class="brand" href="#geral" aria-label="Valle Viação, painel administrativo">
+          <span class="brand-mark" aria-hidden="true">V</span>
+          <span class="brand-copy">
+            <strong>valle</strong>
+            <small>VIAÇÃO · ADMIN</small>
+          </span>
+        </a>
+
+        <p class="nav-label">MENU PRINCIPAL</p>
+        <nav class="main-nav" aria-label="Menu principal">
+          <button class="nav-item is-active" type="button" data-pagina="geral" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">⌂</span><span>Geral</span>
+          </button>
+          <button class="nav-item" type="button" data-pagina="cotacoes">
+            <span class="nav-icon" aria-hidden="true">▤</span><span>Cotações</span>
+            <span class="nav-count">4</span>
+          </button>
+          <button class="nav-item" type="button" data-pagina="veiculos">
+            <span class="nav-icon" aria-hidden="true">▰</span><span>Veículos</span>
+          </button>
+          <button class="nav-item" type="button" data-pagina="financas">
+            <span class="nav-icon" aria-hidden="true">◎</span><span>Finanças</span>
+          </button>
+          <button class="nav-item" type="button" data-pagina="usuarios">
+            <span class="nav-icon" aria-hidden="true">♙</span><span>Usuários</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="support-card">
+            <span class="support-icon" aria-hidden="true">?</span>
+            <strong>Precisa de ajuda?</strong>
+            <span>Consulte a equipe responsável pelo sistema.</span>
+          </div>
+          <div class="sidebar-foot"><span class="status-dot"></span> Sistema operacional</div>
+        </div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <button class="mobile-menu" id="botao-menu-movel" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="breadcrumbs"><span>Valle Viação</span><span class="crumb-slash">/</span><strong id="pagina-atual">Geral</strong></div>
+          <div class="topbar-actions">
+            <span class="demo-badge"><span></span>Dados demonstrativos</span>
+            <button class="icon-button notification-button" type="button" aria-label="Notificações" data-aviso="Você está em dia com as notificações.">
+              <span aria-hidden="true">♧</span><i></i>
+            </button>
+            <span class="topbar-divider"></span>
+            <button class="profile-button" type="button" data-aviso="Sessão de administrador">
+              <span class="avatar avatar-dark">MA</span>
+              <span class="profile-copy"><strong>Mariana Alves</strong><small>Administradora</small></span>
+              <span class="profile-chevron" aria-hidden="true">⌄</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="content" id="conteudo-pagina" tabindex="-1"></main>
+        <footer class="page-footer"><span>Valle Viação <span aria-hidden="true">·</span> Painel administrativo</span><span>Interface demonstrativa — alterações não são salvas.</span></footer>
+      </div>
+    </div>
+    <div class="sidebar-scrim" id="fundo-menu-lateral"></div>
+    <div id="raiz-modal"></div>
+    <div class="toast" id="aviso" role="status" aria-live="polite"></div>
+  </body>
+</html>
