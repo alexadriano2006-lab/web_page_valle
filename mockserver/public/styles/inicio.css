@@ -67,6 +67,39 @@
   background: #e8efe9;
 }
 
+.slider-controles {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  transform: translateX(-50%);
+}
+
+.slider-seta {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--branco);
+  cursor: pointer;
+  font-size: 32px;
+  height: 48px;
+  width: 48px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  transition: color 0.2s ease;
+}
+
+.slider-seta:hover {
+  color: #ffd7bf;
+}
+
 
 .faixa-servicos {
   display: flex;
@@ -345,11 +378,24 @@
   }
 
   .slide-copy .botao {
-    min-height: 34px;
-    padding: 6px 10px;
-    font-size: 11px;
+    min-height: 38px;
+    padding: 7px 12px;
+    font-size: 12px;
     white-space: nowrap;
     box-shadow: 0 4px 12px rgba(31, 43, 42, 0.18);
+  }
+
+  .slider-controles {
+    bottom: 12px;
+    left: 10px;
+    gap: 12px;
+    transform: none;
+  }
+
+  .slider-seta {
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
   }
 
   .faixa-servicos {
