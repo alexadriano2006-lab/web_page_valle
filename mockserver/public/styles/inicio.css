@@ -338,7 +338,7 @@
   }
 
   .faixa-servicos {
-    gap: 14px 24px;
+    display: none;
   }
 
   .introducao-site {
@@ -410,10 +410,6 @@
     width: 44px;
     height: 44px;
     font-size: 26px;
-  }
-
-  .faixa-servicos {
-    display: none;
   }
 
   .introducao-site {
