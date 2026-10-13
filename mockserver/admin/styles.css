@@ -8,7 +8,6 @@
   --muted: #84908b;
   --line: #e9ece8;
   --paper: #fff;
-  --canvas: #f7f8f6;
   --green: #16745d;
   --green-dark: #105c4a;
   --green-soft: #e9f4ef;
@@ -85,8 +84,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .support-icon { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 8px; background: var(--green-soft); color: var(--green); font-size: 13px; font-weight: 700; }
 .support-card strong { margin-top: 3px; font-size: 11px; }
 .support-card > span:not(.support-icon) { color: var(--muted); font-size: 10px; }
-.support-card a { margin-top: 3px; color: var(--green); font-size: 10px; font-weight: 700; text-decoration: none; }
-.support-card a span { padding-left: 3px; }
 .sidebar-foot { display: flex; align-items: center; gap: 8px; padding: 13px 9px 4px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
 .status-dot, .demo-badge span { width: 7px; height: 7px; border-radius: 50%; background: #46aa7c; }
 
@@ -133,7 +130,7 @@ h1, h2, h3, p { margin-top: 0; }
 h1 { margin-bottom: 6px; font-family: "Manrope", sans-serif; font-size: clamp(23px, 2vw, 28px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; }
 .page-heading > div > p:not(.eyebrow) { margin: 0; color: var(--muted); font-size: 11px; }
 .heading-actions { display: flex; align-items: center; gap: 10px; }
-.date-select, .select-control {
+.select-control {
   min-height: 36px;
   padding: 0 30px 0 11px;
   border: 1px solid var(--line);
@@ -143,7 +140,7 @@ h1 { margin-bottom: 6px; font-family: "Manrope", sans-serif; font-size: clamp(23
   cursor: pointer;
   font-size: 10px;
 }
-.button-primary, .button-secondary, .button-quiet {
+.button-primary, .button-secondary {
   display: inline-flex;
   min-height: 36px;
   align-items: center;
@@ -161,8 +158,7 @@ h1 { margin-bottom: 6px; font-family: "Manrope", sans-serif; font-size: clamp(23
 .button-primary { background: var(--green); color: #fff; }
 .button-primary:hover { transform: translateY(-1px); background: var(--green-dark); }
 .button-secondary { border-color: var(--line); background: #fff; color: #56625c; }
-.button-secondary:hover, .button-quiet:hover { background: #f4f7f4; }
-.button-quiet { min-height: 30px; background: transparent; color: var(--green); }
+.button-secondary:hover { background: #f4f7f4; }
 .button-icon { font-size: 15px; line-height: .8; }
 .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 13px; margin-bottom: 17px; }
 .metric-card, .panel { border: 1px solid var(--line); border-radius: 10px; background: var(--paper); box-shadow: var(--shadow); }
@@ -175,7 +171,6 @@ h1 { margin-bottom: 6px; font-family: "Manrope", sans-serif; font-size: clamp(23
 .metric-icon.red { background: var(--red-soft); color: var(--red); }
 .metric-value { display: flex; align-items: baseline; gap: 8px; margin-top: 11px; font-family: "Manrope", sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -.8px; line-height: 1.1; }
 .metric-change { display: inline-flex; align-items: center; gap: 3px; color: #3d9a70; font-family: "DM Sans", sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0; }
-.metric-change.down { color: var(--red); }
 .metric-note { margin: 7px 0 0; color: #9aa39f; font-size: 9px; }
 .panel { min-width: 0; padding: 17px 18px; }
 .panel-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
@@ -204,7 +199,6 @@ td:first-child { color: #394541; font-weight: 600; }
 .search-box input { width: 100%; height: 36px; padding: 0 12px 0 34px; border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--ink); font-size: 10px; }
 .search-box input::placeholder { color: #a4ada8; }
 .toolbar-actions { display: flex; align-items: center; gap: 8px; }
-.results-note { padding: 11px 0 5px; color: #9aa39f; font-size: 9px; }
 .empty-state { padding: 32px 12px; color: #919b96; font-size: 11px; text-align: center; }
 .user-cell { display: flex; align-items: center; gap: 9px; }
 .user-cell .avatar { width: 28px; height: 28px; font-size: 8px; }
@@ -237,7 +231,6 @@ td:first-child { color: #394541; font-weight: 600; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 760px) {
-  body { min-width: 360px; }
   .sidebar { z-index: 31; width: min(290px, 84vw); transform: translateX(-102%); transition: transform .24s ease; }
   .sidebar.is-open { transform: translateX(0); }
   .sidebar-scrim.is-visible { position: fixed; z-index: 30; inset: 0; display: block; background: rgba(20, 35, 29, .32); }

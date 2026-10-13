@@ -1,22 +1,17 @@
 {
-  
-"name": "mockserver",
-
+  "name": "mockserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "Site institucional e painel demonstrativo da Valle Viação",
   "license": "ISC",
   "author": "Alex Adriano",
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:admin": "node serveradm.js",
+    "test": "node --test"
   },
   "dependencies": {
-    "express": "^5.2.1",
-    "serve": "^14.2.6"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.2"
+    "express": "^5.2.1"
   }
 }

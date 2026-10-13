@@ -13,11 +13,11 @@
       { rotulo: "Concluídas", quantidade: cotacoes.filter((cotacao) => cotacao.situacao === "Concluída").length, icone: "closed" },
     ];
     const totalCotacoes = cotacoes.length || 1;
-    const acoes = `<span class="demo-badge"><span></span>Resumo do mês · Outubro 2026</span><button class="button-secondary" type="button" data-exportar="geral"><span class="button-icon" aria-hidden="true">↓</span>Exportar resumo</button>`;
+    const acoes = `<span class="demo-badge"><span></span>Resumo demonstrativo · Outubro 2026</span><button class="button-secondary" type="button" data-exportar="geral"><span class="button-icon" aria-hidden="true">↓</span>Exportar resumo</button>`;
     const conteudo = document.querySelector("#conteudo-pagina");
 
     conteudo.innerHTML = `
-      ${criarCabecalhoPagina("PAINEL ADMINISTRATIVO", "Bom dia, Mariana 👋", "Aqui está o resumo da operação da Valle Viação.", acoes)}
+      ${criarCabecalhoPagina("PAINEL DEMONSTRATIVO", "Bom dia, usuário demo 👋", "Aqui está uma visão ilustrativa da operação em desenvolvimento.", acoes)}
       <section class="metric-grid" aria-label="Indicadores principais">
         ${criarCartaoIndicador("Cotações em aberto", cotacoesEmAberto, "▤", "orange", `${cotacoes.length} solicitações no total`, "↗ 12%")}
         ${criarCartaoIndicador("Veículos em operação", `${veiculosEmOperacao}<span class="metric-change">/ ${veiculos.length}</span>`, "▰", "green", "da frota cadastrada")}

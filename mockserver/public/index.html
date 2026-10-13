@@ -34,25 +34,39 @@
     </header>
 
     <main id="conteudo">
-      <section class="destaque-inicial conteudo-limitado" id="inicio" aria-labelledby="titulo-inicial">
-        <div class="texto-destaque">
-          <span class="rotulo">TRANSPORTE QUE CONECTA</span>
-          <h1 id="titulo-inicial">Seu grupo escolhe o destino.<br><em>A Valle cuida do caminho.</em></h1>
-          <p>Fretamento, turismo e viagens particulares. Conte com a Valle para planejar o transporte do seu grupo.</p>
-          <div class="acoes">
-            <a class="botao" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">Planejar minha viagem ↗</a>
-            <a class="link-texto" href="paginas/servicos.html">Conheça nossos serviços ↓</a>
-          </div>
-          <ul class="marcadores" aria-label="Compromissos da Valle">
-            <li>Segurança</li>
-            <li>Qualidade</li>
-            <li>Tecnologia</li>
-          </ul>
-        </div>
+      <section class="destaque-inicial" id="inicio" aria-label="Destaques da Valle">
+        <div class="slide-show" aria-live="off">
+          <article class="slide is-active">
+            <figure class="imagem-destaque">
+              <img src="img/Volare Fly10 da Valle em estúdio.png" alt="Ônibus em destaque no pátio da Valle" width="1485" height="867" fetchpriority="high">
+            </figure>
+            <div class="slide-copy">
+              <a class="botao" href="paginas/veiculos.html">Ver frota ↗</a>
+            </div>
+          </article>
 
-        <figure class="imagem-destaque">
-          <img src="img/onibus-valle-globo-lento.gif" alt="Ônibus da Valle em uma ilustração do globo" width="1080" height="1080">
-        </figure>
+          <article class="slide">
+            <figure class="imagem-destaque">
+              <img src="img/Veículo no estúdio branco e laranja.png" alt="Ônibus da frota para transporte de grupos" width="1485" height="867">
+            </figure>
+            <div class="slide-copy">
+              <a class="botao" href="paginas/veiculos.html">Ver frota ↗</a>
+            </div>
+          </article>
+
+          <article class="slide">
+            <figure class="imagem-destaque">
+              <img src="img/Veículo no estúdio, fundo branco e laranja.png" alt="Ilustração de ônibus e vans da Valle" width="1485" height="867">
+            </figure>
+            <div class="slide-copy">
+              <a class="botao" href="paginas/veiculos.html">Ver frota ↗</a>
+            </div>
+          </article>
+          <div class="slider-controles" aria-label="Controle do carrossel">
+            <button class="slider-seta" type="button" data-slide="prev" aria-label="Slide anterior">←</button>
+            <button class="slider-seta" type="button" data-slide="next" aria-label="Próximo slide">→</button>
+          </div>
+        </div>
       </section>
 
       <nav class="faixa-servicos" aria-label="Tipos de transporte">
@@ -62,6 +76,24 @@
         <a href="paginas/servicos.html#transporte-escolar">Transporte escolar</a>
         <a href="paginas/servicos.html#translado">Translado</a>
       </nav>
+
+      <section class="introducao-site conteudo-limitado" aria-labelledby="titulo-sobre">
+        <div class="titulo-introducao">
+          <span class="rotulo">CONHEÇA A VALLE</span>
+          <h1 id="titulo-sobre">Uma empresa dedicada a conectar pessoas.</h1>
+          <p class="fundacao-valle">Fundada em <time datetime="1986-04-14">14/04/1986</time></p>
+        </div>
+        <div class="texto-introducao">
+          <p class="texto-principal">
+            A Valle Viação organiza soluções de transporte para diferentes
+            momentos: da rotina escolar e empresarial às viagens em grupo.
+          </p>
+          <p>
+            Também é responsável pelo TEG Cotia e pela Valle Trips, conectando
+            pessoas por meio do transporte escolar, fretamento e turismo.
+          </p>
+        </div>
+      </section>
 
       <section class="compromissos-inicial conteudo-limitado" aria-labelledby="titulo-compromissos">
         <header class="cabecalho-compromissos">
@@ -127,24 +159,6 @@
           <p>
             A disponibilidade e o veículo adequado são confirmados durante o
             atendimento, conforme as informações do trajeto.
-          </p>
-        </div>
-      </section>
-
-      <section class="introducao-site conteudo-limitado" aria-labelledby="titulo-sobre">
-        <div class="titulo-introducao">
-          <span class="rotulo">CONHEÇA A VALLE</span>
-          <h2 id="titulo-sobre">Uma empresa dedicada a conectar pessoas.</h2>
-        </div>
-        <div class="texto-introducao">
-          <p class="texto-principal">
-            A Valle Viação organiza soluções de transporte para diferentes
-            momentos: da rotina escolar e empresarial às viagens em grupo.
-          </p>
-          <p>
-            Também é responsável pelo TEG Cotia e pela Valle Trips. Este site
-            reúne uma apresentação da empresa, suas áreas de atuação e opções
-            de veículos.
           </p>
         </div>
       </section>

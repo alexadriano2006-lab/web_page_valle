@@ -5,6 +5,12 @@
   const aviso = document.querySelector("#aviso");
   let paginaSelecionada = "geral";
   let tempoAviso;
+  let focoAnterior;
+
+  function fecharModal() {
+    raizModal.innerHTML = "";
+    focoAnterior?.focus();
+  }
 
   function exibirAviso(mensagem) {
     aviso.textContent = mensagem;
@@ -41,6 +47,7 @@
   function abrirModal(chavePagina) {
     const pagina = painel.paginas[chavePagina];
     if (!pagina?.campos) return;
+    focoAnterior = document.activeElement;
 
     const campos = pagina.campos.map((campo) => {
       const controle = campo.tipoCampo === "selecao"
@@ -49,7 +56,7 @@
       return `<div class="form-field ${campo.larguraCompleta ? "full" : ""}"><label for="campo-${campo.nome}">${campo.rotulo}</label>${controle}</div>`;
     }).join("");
 
-    raizModal.innerHTML = `<div class="modal-backdrop" data-descartar-modal>
+    raizModal.innerHTML = `<div class="modal-backdrop">
       <section class="modal" role="dialog" aria-modal="true" aria-labelledby="titulo-modal">
         <div class="modal-header"><div><h2 id="titulo-modal">${pagina.rotuloBotao}</h2><p>Preencha os dados abaixo para adicionar um registro.</p></div><button class="modal-close" type="button" data-fechar-modal aria-label="Fechar">×</button></div>
         <form id="formulario-registro"><div class="form-grid">${campos}</div>
@@ -65,7 +72,7 @@
     const pagina = painel.paginas[paginaSelecionada];
     const valores = Object.fromEntries(new FormData(formulario).entries());
     pagina.registros.unshift(pagina.criarRegistro(valores, pagina.registros));
-    raizModal.innerHTML = "";
+    fecharModal();
     exibirPagina(paginaSelecionada);
     exibirAviso("Registro adicionado. Os dados ficam disponíveis apenas nesta sessão.");
   }
@@ -115,7 +122,7 @@
     }
 
     if (elemento.closest("[data-fechar-modal]") || elemento.classList.contains("modal-backdrop")) {
-      raizModal.innerHTML = "";
+      fecharModal();
       return;
     }
 
@@ -138,6 +145,12 @@
   });
 
   document.querySelector("#fundo-menu-lateral").addEventListener("click", fecharMenuMovel);
+  document.addEventListener("keydown", (evento) => {
+    if (evento.key === "Escape") {
+      if (raizModal.firstElementChild) fecharModal();
+      fecharMenuMovel();
+    }
+  });
   window.addEventListener("hashchange", () => exibirPagina(window.location.hash.slice(1) || "geral"));
   exibirPagina(window.location.hash.slice(1) || "geral");
 })(window.PainelValle);

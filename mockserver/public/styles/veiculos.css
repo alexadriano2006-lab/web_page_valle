@@ -18,7 +18,8 @@
 .cartao-veiculo img {
   display: block;
   width: 100%;
-  height: 230px;
+  height: 100%;
+  min-height: 260px;
   object-fit: contain;
   background: var(--fundo-suave);
 }
@@ -26,7 +27,6 @@
 .texto-cartao-veiculo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   padding: 28px 34px;
 }
@@ -49,21 +49,6 @@
   margin-bottom: 0;
   color: var(--texto-suave);
   font-size: 15px;
-}
-
-.botao-detalhes-veiculo {
-  flex: 0 0 auto;
-  padding: 10px 16px;
-  border: 1px solid var(--laranja);
-  border-radius: 8px;
-  background: var(--branco);
-  color: var(--laranja-escuro);
-  font: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  white-space: nowrap;
-  opacity: 0.75;
-  cursor: not-allowed;
 }
 
 .aviso-cotacao {
@@ -101,6 +86,7 @@
 
   .cartao-veiculo img {
     height: 200px;
+    min-height: 0;
   }
 
   .texto-cartao-veiculo {
