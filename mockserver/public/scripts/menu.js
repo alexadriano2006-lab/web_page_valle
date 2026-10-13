@@ -33,7 +33,6 @@ document.querySelectorAll(".cabecalho").forEach((cabecalho) => {
 const secaoDestaque = document.querySelector(".destaque-inicial");
 if (secaoDestaque) {
   const slides = [...secaoDestaque.querySelectorAll(".slide")];
-  const botoesSlide = [...secaoDestaque.querySelectorAll("[data-slide]")];
   const movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
   let indiceAtual = 0;
   let temporizador;
@@ -64,14 +63,6 @@ if (secaoDestaque) {
   secaoDestaque.addEventListener("focusin", reiniciarAutoPlay);
   secaoDestaque.addEventListener("focusout", () => window.setTimeout(reiniciarAutoPlay, 0));
   document.addEventListener("visibilitychange", reiniciarAutoPlay);
-
-  botoesSlide.forEach((botao) => {
-    botao.addEventListener("click", () => {
-      const direcao = botao.dataset.slide === "next" ? 1 : -1;
-      avancarSlide(direcao);
-      reiniciarAutoPlay();
-    });
-  });
 
   if (slides.length) mostrarSlide(0);
   reiniciarAutoPlay();
