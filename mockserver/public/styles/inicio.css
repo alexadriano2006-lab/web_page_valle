@@ -1,39 +1,7 @@
 .destaque-inicial {
   width: 100%;
   margin-inline: auto;
-  padding-block: 8px 20px;
-}
-
-.slide-show {
-  position: relative;
-  overflow: hidden;
-  background: #dfe9e6;
-}
-
-.slide {
-  position: relative;
-  display: none;
-  width: 100%;
-}
-
-.slide.is-active {
-  display: block;
-}
-
-.slide-copy {
-  position: absolute;
-  right: max(16px, 5vw);
-  bottom: max(18px, 3vw);
-  z-index: 1;
-  max-width: min(220px, 40vw);
-}
-
-.slide-copy .botao {
-  min-height: 54px;
-  padding: 14px 28px;
-  font-size: 16px;
-  letter-spacing: 0.02em;
-  box-shadow: 0 12px 24px rgba(31, 43, 42, 0.18);
+  padding-block: 0 16px;
 }
 
 .link-texto {
@@ -52,54 +20,18 @@
 
 .imagem-destaque {
   width: 100%;
-  aspect-ratio: 1672 / 780;
-  overflow: hidden;
   margin: 0;
+  border-bottom: 3px solid var(--laranja);
+  background: #fff5ee;
 }
 
 .imagem-destaque img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1672 / 847;
-  margin-top: -4%;
-  object-fit: fill;
-  background: #e8efe9;
+  height: clamp(320px, 42vw, 640px);
+  object-fit: cover;
+  object-position: center;
 }
-
-.slider-controles {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  width: max-content;
-  max-width: calc(100% - 24px);
-  transform: translateX(-50%);
-}
-
-.slider-seta {
-  display: grid;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--branco);
-  cursor: pointer;
-  font-size: 32px;
-  height: 48px;
-  width: 48px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-  transition: color 0.2s ease;
-}
-
-.slider-seta:hover {
-  color: #ffd7bf;
-}
-
 
 .faixa-servicos {
   display: flex;
@@ -331,12 +263,6 @@
 }
 
 @media (max-width: 900px) {
-  .slide-copy {
-    right: 16px;
-    bottom: 16px;
-    max-width: 180px;
-  }
-
   .faixa-servicos {
     display: none;
   }
@@ -370,46 +296,8 @@
 }
 
 @media (max-width: 640px) {
-  .destaque-inicial {
-    padding-block: 8px 20px;
-  }
-
-  .imagem-destaque {
-    aspect-ratio: 4 / 3;
-  }
-
   .imagem-destaque img {
-    height: 100%;
-    aspect-ratio: auto;
-    margin-top: 0;
-    object-fit: cover;
-  }
-
-  .slide-copy {
-    right: 10px;
-    bottom: 12px;
-    max-width: 140px;
-  }
-
-  .slide-copy .botao {
-    min-height: 38px;
-    padding: 7px 12px;
-    font-size: 12px;
-    white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(31, 43, 42, 0.18);
-  }
-
-  .slider-controles {
-    bottom: 12px;
-    left: 10px;
-    gap: 12px;
-    transform: none;
-  }
-
-  .slider-seta {
-    width: 44px;
-    height: 44px;
-    font-size: 26px;
+    height: 330px;
   }
 
   .introducao-site {

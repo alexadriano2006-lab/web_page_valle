@@ -7,7 +7,7 @@
   --fundo-suave: #f7f8f4;
   --branco: #fff;
   --sombra-suave: 0 18px 38px rgba(31, 43, 42, 0.08);
-  --altura-cabecalho: 88px;
+  --altura-cabecalho: 96px;
 }
 
 * {
@@ -92,32 +92,117 @@ h3 {
 }
 
 .cabecalho {
+  --azul-cabecalho: #102b46;
+  --diagonal-cabecalho: 64px;
+  --margem-cabecalho: max(24px, calc((100vw - 1400px) / 2));
+  --largura-marca: max(176px, calc(6vw - var(--margem-cabecalho) + 160px));
+  isolation: isolate;
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  inset: 0 0 auto;
   z-index: 10;
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--largura-marca) minmax(0, 1fr);
+  grid-template-rows: 32px 64px;
+  column-gap: 24px;
   min-height: var(--altura-cabecalho);
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 0 60px;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 2px 14px rgba(31, 43, 42, 0.06);
-  backdrop-filter: blur(10px);
+  padding-inline: var(--margem-cabecalho);
+  background: var(--azul-cabecalho);
+  box-shadow: 0 4px 20px rgba(31, 43, 42, 0.1);
+}
+
+.cabecalho::before,
+.cabecalho::after {
+  position: absolute;
+  inset: 32px 0 0 calc(var(--margem-cabecalho) + var(--largura-marca) - 24px);
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+.cabecalho::before {
+  background: var(--laranja);
+  clip-path: polygon(var(--diagonal-cabecalho) 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.cabecalho::after {
+  background: rgba(255, 255, 255, 0.85);
+  clip-path: polygon(
+    var(--diagonal-cabecalho) 0,
+    100% 0,
+    100% 2px,
+    calc(var(--diagonal-cabecalho) + 1px) 2px,
+    3px 100%,
+    0 100%
+  );
 }
 
 .marca {
+  position: relative;
+  left: calc(6vw - var(--margem-cabecalho));
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: inline-grid;
+  place-items: center;
+  align-items: center;
+  justify-content: start;
+  min-width: 0;
+  height: var(--altura-cabecalho);
+  padding: 4px 0;
+  flex-shrink: 0;
+}
+
+.cabecalho-contatos {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  color: var(--branco);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cabecalho-contatos a {
   display: inline-flex;
-  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.cabecalho-contatos a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cabecalho-contatos svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .marca img {
+  grid-area: 1 / 1;
   display: block;
   width: 132px;
-  height: var(--altura-cabecalho);
+  height: auto;
+  max-height: 88px;
   object-fit: contain;
+  transform: scale(1.04);
+  transform-origin: left center;
+}
+
+/* Overlay only the VALLE lettering; the sun, mountain and subtitle keep their colors. */
+.marca .marca-escrita {
+  filter: brightness(0) invert(1);
+  clip-path: inset(54% 0 28% 0);
+  pointer-events: none;
 }
 
 .botao-menu {
@@ -125,7 +210,12 @@ h3 {
 }
 
 .navegacao-principal {
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
+  justify-content: flex-end;
+  padding-left: 48px;
   align-items: center;
   gap: 28px;
   font-size: 14px;
@@ -169,9 +259,26 @@ h3 {
   border-color: var(--laranja-escuro);
 }
 
-.botao-pequeno {
-  min-height: 42px;
-  padding: 9px 16px;
+.navegacao-principal .botao {
+  min-height: 44px;
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  background: var(--branco);
+  color: var(--azul-cabecalho);
+  box-shadow: 0 4px 12px rgba(16, 43, 70, 0.14);
+  white-space: nowrap;
+}
+
+.navegacao-principal .botao:hover {
+  border-color: var(--branco);
+  background: var(--azul-cabecalho);
+  color: var(--branco);
+  box-shadow: 0 6px 16px rgba(16, 43, 70, 0.22);
+}
+
+.navegacao-principal .botao:active {
+  transform: translateY(0);
 }
 
 .pular-conteudo {
@@ -199,6 +306,7 @@ h3 {
 }
 
 .rodape-site {
+  --azul-rodape: #102b46;
   margin-top: 24px;
   background: var(--laranja);
   color: var(--branco);
@@ -264,8 +372,7 @@ h3 {
 .rodape-coluna > a:hover,
 .rodape-base a:hover {
   color: #51230d;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: none;
 }
 
 .rodape-coluna a:focus-visible,
@@ -274,23 +381,64 @@ h3 {
 }
 
 .rodape-coluna .link-whatsapp {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  min-height: 64px;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 12px 15px;
-  border: 1px solid var(--branco);
-  border-radius: 8px;
-  background: var(--branco);
-  color: var(--laranja-escuro);
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  background: var(--azul-rodape);
+  color: var(--branco);
   font-weight: 700;
-  transition: background 0.2s ease, color 0.2s ease;
+  box-shadow: 0 5px 14px rgba(16, 43, 70, 0.16);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icone-whatsapp {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 7px;
+  border-radius: 50%;
+  background: #25d366;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.texto-whatsapp {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.35;
+}
+
+.texto-whatsapp > span {
+  color: #d8e6f2;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.texto-whatsapp strong {
+  font-size: 16px;
 }
 
 .rodape-coluna .link-whatsapp:hover {
-  background: transparent;
+  transform: translateY(-2px);
+  background: #183c5e;
   color: var(--branco);
+  box-shadow: 0 8px 18px rgba(16, 43, 70, 0.22);
   text-decoration: none;
+}
+
+.rodape-coluna .link-whatsapp:active {
+  transform: translateY(0);
 }
 
 .rodape-coluna .link-email {
@@ -317,12 +465,34 @@ h3 {
   gap: 8px;
 }
 
-.redes-sociais span {
-  padding: 7px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
+.redes-sociais a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--azul-rodape);
   border-radius: 999px;
-  color: rgba(255, 255, 255, 0.92);
+  background: var(--azul-rodape);
+  color: var(--branco);
   font-size: 12px;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.redes-sociais a:hover {
+  background: var(--branco);
+  color: var(--azul-rodape);
+}
+
+.rodape-site .rodape-base {
+  width: 100%;
+  padding-inline: max(20px, calc((100% - 1400px) / 2));
+  border-top: 0;
+  background: var(--azul-rodape);
+}
+
+.rodape-site .rodape-base a:hover {
+  color: var(--branco);
 }
 
 .rodape-base {
@@ -331,7 +501,6 @@ h3 {
   justify-content: space-between;
   gap: 20px;
   padding-block: 18px 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
   color: rgba(255, 255, 255, 0.9);
   font-size: 12px;
 }
@@ -345,22 +514,74 @@ h3 {
   font-weight: 700;
 }
 
+@media (min-width: 901px) {
+  .navegacao-principal {
+    margin-right: calc(40px - var(--margem-cabecalho));
+    gap: clamp(20px, 2.2vw, 36px);
+    color: var(--branco);
+  }
+
+  .navegacao-principal > a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .navegacao-principal > a:not(.botao) {
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+  }
+
+  .navegacao-principal > a:not(.botao):hover,
+  .navegacao-principal > a[aria-current="page"]:not(.botao) {
+    color: var(--branco);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+
+  .navegacao-principal a:focus-visible {
+    outline-color: var(--branco);
+  }
+}
+
 @media (max-width: 900px) {
+  :root {
+    --altura-cabecalho: 72px;
+  }
+
   .cabecalho {
-    flex-wrap: wrap;
+    --diagonal-cabecalho: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .marca img {
+    width: 108px;
+    max-height: calc(var(--altura-cabecalho) - 8px);
+  }
+
+  .cabecalho::before,
+  .cabecalho::after {
+    inset: 0 0 0 42%;
+  }
+
+  .cabecalho-contatos {
+    display: none;
   }
 
   .botao-menu {
+    position: relative;
     display: inline-flex;
     min-height: 34px;
     align-self: center;
     align-items: center;
     gap: 6px;
     padding: 5px 9px;
-    border: 1px solid rgba(239, 107, 38, 0.45);
+    border: 1px solid var(--branco);
     border-radius: 6px;
-    background: #fff8f3;
-    color: var(--laranja-escuro);
+    background: transparent;
+    color: var(--branco);
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
@@ -369,8 +590,8 @@ h3 {
 
   .botao-menu:hover,
   .botao-menu[aria-expanded="true"] {
-    border-color: var(--laranja);
-    background: #ffefe4;
+    border-color: var(--branco);
+    background: var(--azul-cabecalho);
   }
 
   .navegacao-principal {
@@ -380,6 +601,7 @@ h3 {
     z-index: 11;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: stretch;
     gap: 8px;
     width: min(360px, 85vw);
@@ -388,7 +610,8 @@ h3 {
     overflow-y: auto;
     padding: 24px 20px;
     border-left: 1px solid var(--linha);
-    background: var(--branco);
+    background: var(--azul-cabecalho);
+    color: var(--branco);
     box-shadow: -12px 0 28px rgba(31, 43, 42, 0.14);
     transform: translateX(100%);
     visibility: hidden;
@@ -408,7 +631,8 @@ h3 {
 
   .navegacao-principal > a:not(.botao):hover,
   .navegacao-principal > a[aria-current="page"]:not(.botao) {
-    background: #fff5ee;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--branco);
   }
 
   .navegacao-principal .botao {
@@ -423,7 +647,7 @@ h3 {
 
 @media (max-width: 560px) {
   :root {
-    --altura-cabecalho: 52px;
+    --altura-cabecalho: 64px;
   }
 
   .conteudo-limitado,
@@ -433,11 +657,12 @@ h3 {
   }
 
   .cabecalho {
+    --margem-cabecalho: 16px;
     padding: 0 16px;
   }
 
   .marca img {
-    width: 76px;
+    width: 100px;
   }
 
   .rodape-conteudo {
@@ -462,7 +687,25 @@ h3 {
   }
 }
 
+/* Only JavaScript adds this class; content stays visible without it. */
+.revelar-rolagem {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.revelar-rolagem.visivel,
+.revelar-rolagem:focus-within {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .revelar-rolagem {
+    opacity: 1;
+    transform: none;
+  }
+
   *,
   *::before,
   *::after {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../styles/veiculos.css">
     <script src="../scripts/menu.js" defer></script>
+    <script src="../scripts/veiculos.js" defer></script>
       <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
 </head>
   <body>
@@ -15,8 +16,19 @@
 
     <header class="cabecalho">
       <a class="marca" href="../" aria-label="Valle Viação — início">
-        <img src="../img/Logo Valle com montanha e sol.png" alt="Valle Viação" width="110" height="90">
+        <img src="../img/Logo Valle com montanha e sol.png" alt="Valle Viação" width="1402" height="1122">
+        <img class="marca-escrita" src="../img/Logo Valle com montanha e sol.png" alt="" aria-hidden="true" width="1402" height="1122">
       </a>
+      <div class="cabecalho-contatos" aria-label="Contatos da Valle">
+        <a href="tel:+5511933862321">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3 3 5-2 2a15 15 0 0 0 6 6l2-2 5 3-1 4C10 23 1 14 3 4Z"/></svg>
+          (11) 93386-2321
+        </a>
+        <a href="mailto:atendimento@valleviacao.com.br">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+          atendimento@valleviacao.com.br
+        </a>
+      </div>
       <button class="botao-menu" type="button" aria-expanded="false" aria-controls="navegacao">
         Menu <span aria-hidden="true">☰</span>
       </button>
@@ -25,57 +37,62 @@
         <a href="../sobre/">A Valle</a>
         <a href="../servicos/">Serviços</a>
         <a href="../veiculos/" aria-current="page">Veículos</a>
-        <a class="botao botao-pequeno" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">Solicitar cotação ↗</a>
+        <a class="botao" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">Solicitar cotação</a>
       </nav>
     </header>
 
-    <main id="conteudo" class="conteudo-limitado pagina-interna pagina-veiculos">
+    <main id="conteudo" class="conteudo-limitado pagina-interna">
       <header class="cabecalho-pagina">
         <span class="rotulo">OPÇÕES DE TRANSPORTE</span>
         <h1>O veículo acompanha o seu plano.</h1>
         <p>Informe o tamanho do grupo e as necessidades da viagem. A equipe confirma o modelo disponível durante a cotação.</p>
       </header>
 
-      <section class="lista-veiculos" aria-label="Categorias de veículos">
+      <section class="lista-veiculos" aria-label="Veículos da Valle">
         <article class="cartao-veiculo">
-          <img src="../img/Veículo no estúdio, fundo branco e laranja.png" alt="Veículo da Valle em estúdio">
+          <img src="../img/van-valle-placa-coberta.png" alt="Mercedes-Benz Sprinter Mart M7 da Valle Viação" width="1672" height="941">
           <div class="texto-cartao-veiculo">
-            <div class="detalhes-veiculo">
-              <span class="rotulo">01 · GRUPOS MENORES</span>
-              <h2>Vans</h2>
-              <p>Para grupos menores e deslocamentos sob medida.</p>
-            </div>
+            <span class="rotulo">01 · 18 PASSAGEIROS</span>
+            <h2>Mercedes-Benz Sprinter Mart M7</h2>
+            <p>Traslados, viagens particulares e grupos menores.</p>
+            <a class="botao ver-veiculo" href="detalhes/sprinter.html" data-veiculo="Mercedes-Benz Sprinter Mart M7" aria-haspopup="dialog">Conhecer veículo <span aria-hidden="true">+</span></a>
           </div>
         </article>
 
         <article class="cartao-veiculo">
-          <img src="../img/Veículo no estúdio branco e laranja.png" alt="Ônibus utilizado no transporte escolar">
+          <img src="../img/volare-fly10-placa-coberta.png" alt="Volare Fly 10 da Valle Viação" width="1672" height="941">
           <div class="texto-cartao-veiculo">
-            <div class="detalhes-veiculo">
-              <span class="rotulo">02 · GRUPOS INTERMEDIÁRIOS</span>
-              <h2>Micro-ônibus</h2>
-              <p>Uma opção para passeios, equipes e grupos intermediários.</p>
-            </div>
+            <span class="rotulo">02 · 31 PASSAGEIROS</span>
+            <h2>Volare Fly 10</h2>
+            <p>Excursões, eventos e fretamentos empresariais.</p>
+            <a class="botao ver-veiculo" href="detalhes/fly-10.html" data-veiculo="Volare Fly 10" aria-haspopup="dialog">Conhecer veículo <span aria-hidden="true">+</span></a>
           </div>
         </article>
 
         <article class="cartao-veiculo">
-          <img src="../img/Volare Fly10 da Valle em estúdio.png" alt="Ônibus da Valle em uma ilustração do globo">
+          <img src="../img/volare-v8-placa-coberta.png" alt="Marcopolo Volare V8 da Valle Viação" width="1671" height="941">
           <div class="texto-cartao-veiculo">
-            <div class="detalhes-veiculo">
-              <span class="rotulo">03 · GRUPOS MAIORES</span>
-              <h2>Ônibus</h2>
-              <p>Para reunir grupos maiores no mesmo trajeto.</p>
-            </div>
+            <span class="rotulo">03 · 30 PASSAGEIROS</span>
+            <h2>Marcopolo Volare V8</h2>
+            <p>Passeios turísticos, viagens e transporte corporativo.</p>
+            <a class="botao ver-veiculo" href="detalhes/volare-v8.html" data-veiculo="Marcopolo Volare V8" aria-haspopup="dialog">Conhecer veículo <span aria-hidden="true">+</span></a>
           </div>
         </article>
       </section>
 
       <aside class="aviso-cotacao">
         <p>Modelo, disponibilidade e configuração do veículo são confirmados de acordo com o trajeto e a necessidade do grupo.</p>
-        <a class="botao" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">Consultar disponibilidade ↗</a>
+        <a class="botao" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">Consultar disponibilidade</a>
       </aside>
     </main>
+
+    <dialog class="modal-veiculo" aria-labelledby="titulo-modal-veiculo">
+      <div class="barra-modal-veiculo">
+        <h2 id="titulo-modal-veiculo">Conheça o veículo</h2>
+        <button class="fechar-modal-veiculo" type="button" aria-label="Fechar detalhes do veículo" autofocus>Fechar <span aria-hidden="true">×</span></button>
+      </div>
+      <iframe class="iframe-veiculo" title="Fotos e informações do veículo"></iframe>
+    </dialog>
 
     <footer class="rodape-site">
       <div class="rodape-conteudo">
@@ -101,17 +118,19 @@
         <section class="rodape-coluna rodape-contato" aria-labelledby="titulo-contato-rodape">
           <h2 id="titulo-contato-rodape">Fale com a gente</h2>
           <p>Entre em contato para conversar sobre o transporte do seu grupo.</p>
-          <a class="link-whatsapp" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">
-            Atendimento pelo WhatsApp <span aria-hidden="true">↗</span>
-          </a>
           <a class="link-email" href="mailto:atendimento@valleviacao.com.br">
             <span class="rotulo-contato">E-mail</span>
             atendimento@valleviacao.com.br
           </a>
+          <a class="link-whatsapp" href="https://api.whatsapp.com/send/?phone=5511933862321&amp;text&amp;type=phone_number&amp;app_absent=0">
+            <svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.1-4.9a8.5 8.5 0 1 1 16.4-3.6Z"/><path d="m8.2 7.4 1.5 2.4-1 1.1a10 10 0 0 0 4.4 4.1l1-1.1 2.5 1.3c-.3 1.6-1.3 2-2.5 1.7-3.8-1-6.9-4-7.6-7.3-.3-1.2.3-2 1.7-2.2Z"/></svg>
+            <span class="texto-whatsapp"><span>Fale com a equipe</span><strong>WhatsApp</strong></span>
+          </a>
           <h3>Redes sociais</h3>
-          <div class="redes-sociais" aria-label="Perfis sociais a configurar">
-            <span>Instagram</span>
-            <span>Facebook</span>
+          <div class="redes-sociais" aria-label="Redes sociais da Valle">
+            <a href="https://www.instagram.com/valle_viacao/" target="_blank" rel="noopener noreferrer" aria-label="Valle no Instagram (abre em nova aba)">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61590617002407" target="_blank" rel="noopener noreferrer" aria-label="Valle no Facebook (abre em nova aba)">Facebook</a>
+            <a href="https://www.linkedin.com/company/valle-via%C3%A7%C3%A3o-ltda/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="Valle no LinkedIn (abre em nova aba)">LinkedIn</a>
           </div>
         </section>
       </div>

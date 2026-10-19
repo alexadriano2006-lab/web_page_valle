@@ -56,7 +56,7 @@ for (const pasta of ["public", "admin"]) {
     for (const arquivo of arquivosHtml) {
       const conteudo = await readFile(new URL(arquivo, raiz), "utf8");
       for (const [, caminho] of conteudo.matchAll(/(?:src|href)="([^"#]+)"/g)) {
-        if (/^(?:https?:|mailto:)/.test(caminho)) continue;
+        if (/^(?:https?:|mailto:|tel:)/.test(caminho)) continue;
         const url = new URL(caminho, `${endereco}/${arquivo}`);
         const resposta = await fetch(url);
         assert.equal(resposta.status, 200, `${arquivo}: ${caminho}`);

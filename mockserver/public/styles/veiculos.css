@@ -26,13 +26,95 @@
 
 .texto-cartao-veiculo {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
   padding: 28px 34px;
 }
 
-.detalhes-veiculo {
-  min-width: 0;
+.ver-veiculo {
+  gap: 24px;
+  margin-top: 22px;
+  border-radius: 999px;
+  border-color: #102b46;
+  background: #102b46;
+}
+
+.modal-veiculo-aberto {
+  overflow: hidden;
+}
+
+.modal-veiculo {
+  width: min(1100px, calc(100% - 40px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 20px;
+  background: var(--branco);
+  box-shadow: 0 24px 80px rgba(16, 43, 70, 0.3);
+}
+
+.modal-veiculo::backdrop {
+  background: rgba(9, 27, 45, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.barra-modal-veiculo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 62px;
+  padding: 12px 22px;
+  background: #102b46;
+  color: var(--branco);
+}
+
+.barra-modal-veiculo h2 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.fechar-modal-veiculo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 38px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.fechar-modal-veiculo span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.fechar-modal-veiculo:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.iframe-veiculo {
+  display: block;
+  width: 100%;
+  height: min(680px, calc(100dvh - 110px));
+  border: 0;
+}
+
+@media (min-width: 901px) {
+  .iframe-veiculo {
+    width: calc(100% - 48px);
+    margin-inline: 24px;
+  }
 }
 
 .texto-cartao-veiculo .rotulo {
@@ -74,7 +156,6 @@
   }
 
   .texto-cartao-veiculo {
-    gap: 16px;
     padding: 24px;
   }
 }
@@ -90,13 +171,7 @@
   }
 
   .texto-cartao-veiculo {
-    align-items: flex-end;
-    gap: 18px;
     padding: 22px;
-  }
-
-  .detalhes-veiculo {
-    width: 100%;
   }
 
   .texto-cartao-veiculo h2 {
@@ -108,5 +183,13 @@
     flex-direction: column;
     margin-top: 30px;
     padding: 22px;
+  }
+
+  .aviso-cotacao .botao {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px;
+    line-height: 1.4;
   }
 }

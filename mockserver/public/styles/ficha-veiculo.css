@@ -1,0 +1,93 @@
+.pagina-ficha {
+  min-width: 0;
+  padding: 0;
+  background: var(--branco);
+}
+
+.ficha-veiculo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.foto-ficha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 28px 0;
+  background: #fff5ee;
+}
+
+.foto-ficha img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.foto-ficha figcaption {
+  padding: 20px 24px 0;
+  color: var(--texto-suave);
+  font-size: 12px;
+  text-align: center;
+}
+
+.conteudo-ficha {
+  align-self: center;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.conteudo-ficha h1 {
+  margin-bottom: 20px;
+  color: #102b46;
+  font-size: clamp(26px, 3.5vw, 38px);
+  letter-spacing: -0.04em;
+}
+
+.capacidade-ficha {
+  display: inline-flex;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #edf3f8;
+  color: #102b46;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.conteudo-ficha > p {
+  color: var(--texto-suave);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.conteudo-ficha strong {
+  color: var(--texto);
+}
+
+.cotacao-ficha {
+  width: 100%;
+  margin-top: 8px;
+  border-color: #102b46;
+  border-radius: 999px;
+  background: #102b46;
+}
+
+.conteudo-ficha .nota-ficha {
+  margin: 14px 0 0;
+  font-size: 12px;
+}
+
+@media (max-width: 680px) {
+  .ficha-veiculo {
+    grid-template-columns: 1fr;
+  }
+
+  .foto-ficha {
+    padding: 0;
+  }
+
+  .foto-ficha figcaption {
+    padding: 12px;
+  }
+}

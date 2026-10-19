@@ -10,6 +10,7 @@ Para abrir o painel demonstrativo, execute `npm run start:admin` e acesse `http:
 - `sobre/index.html`: apresentação institucional e artigos.
 - `servicos/index.html`: serviços de transporte.
 - `veiculos/index.html`: categorias de veículos.
+- `veiculos/detalhes/*.html`: fichas dos veículos, acessíveis diretamente ou pelo modal da página de veículos.
 
 ## Estilos e scripts
 
@@ -18,8 +19,10 @@ Para abrir o painel demonstrativo, execute `npm run start:admin` e acesse `http:
 - `styles/sobre.css`: página institucional.
 - `styles/servicos.css`: página de serviços.
 - `styles/veiculos.css`: página de veículos.
-- `scripts/menu.js`: menu em telas menores e carrossel com setas, pausa automática durante a interação e respeito à preferência por movimento reduzido.
+- `styles/ficha-veiculo.css`: fichas dos veículos.
+- `scripts/menu.js`: menu em telas menores, normalização dos endereços com `index.html` e animações de entrada com respeito à preferência por movimento reduzido.
+- `scripts/veiculos.js`: abertura e fechamento do modal com as fichas dos veículos.
 
-Os perfis de redes sociais estão identificados no rodapé, aguardando os links oficiais. Não há formulário de cotação nem backend integrado; os botões de contato direcionam para o WhatsApp.
+Os perfis de redes sociais estão vinculados no rodapé. Não há formulário de cotação nem backend integrado; os botões de contato direcionam para o WhatsApp.
 
 Os links públicos usam `/sobre/`, `/servicos/` e `/veiculos/`. Os arquivos antigos em `paginas/` redirecionam para os novos endereços, preservando parâmetros e âncoras.

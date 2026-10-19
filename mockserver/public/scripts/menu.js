@@ -36,49 +36,38 @@ document.querySelectorAll(".cabecalho").forEach((cabecalho) => {
   });
 });
 
-const secaoDestaque = document.querySelector(".destaque-inicial");
-if (secaoDestaque) {
-  const slides = [...secaoDestaque.querySelectorAll(".slide")];
-  const botoesSlide = [...secaoDestaque.querySelectorAll("[data-slide]")];
+// Reveal each block once, keeping anchor links and keyboard navigation usable.
+if ("IntersectionObserver" in window) {
   const movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let indiceAtual = 0;
-  let temporizador;
-
-  const mostrarSlide = (indice) => {
-    indiceAtual = (indice + slides.length) % slides.length;
-
-    slides.forEach((slide, index) => {
-      slide.classList.toggle("is-active", index === indiceAtual);
+  const candidatos = [...document.querySelectorAll(
+    "main .destaque-inicial, main > header, main section > header, " +
+    "main article, main aside, main h1, main h2, main p, " +
+    ".titulo-introducao, .texto-orientacao, .detalhes-cotacao"
+  )];
+  // Animate the containing block instead of hiding its children a second time.
+  const elementos = candidatos.filter((elemento) =>
+    !candidatos.some((outro) => outro !== elemento && outro.contains(elemento))
+  );
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(({ target, isIntersecting }) => {
+      if (isIntersecting) {
+        target.classList.add("visivel");
+        observador.unobserve(target);
+      }
     });
+  }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
 
-  };
-
-  const avancarSlide = (passo = 1) => {
-    mostrarSlide(indiceAtual + passo);
-  };
-
-  const reiniciarAutoPlay = () => {
-    window.clearInterval(temporizador);
-    if (slides.length < 2 || movimentoReduzido.matches || document.hidden || secaoDestaque.matches(":hover, :focus-within")) return;
-    temporizador = window.setInterval(avancarSlide, 5000);
-  };
-
-  movimentoReduzido.addEventListener("change", reiniciarAutoPlay);
-
-  secaoDestaque.addEventListener("mouseenter", reiniciarAutoPlay);
-  secaoDestaque.addEventListener("mouseleave", reiniciarAutoPlay);
-  secaoDestaque.addEventListener("focusin", reiniciarAutoPlay);
-  secaoDestaque.addEventListener("focusout", () => window.setTimeout(reiniciarAutoPlay, 0));
-  document.addEventListener("visibilitychange", reiniciarAutoPlay);
-
-  botoesSlide.forEach((botao) => {
-    botao.addEventListener("click", () => {
-      const direcao = botao.dataset.slide === "next" ? 1 : -1;
-      avancarSlide(direcao);
-      reiniciarAutoPlay();
+  if (!movimentoReduzido.matches) {
+    elementos.forEach((elemento) => {
+      elemento.classList.add("revelar-rolagem");
+      observador.observe(elemento);
     });
+  }
+
+  movimentoReduzido.addEventListener("change", () => {
+    if (movimentoReduzido.matches) {
+      observador.disconnect();
+      elementos.forEach((elemento) => elemento.classList.add("visivel"));
+    }
   });
-
-  if (slides.length) mostrarSlide(0);
-  reiniciarAutoPlay();
 }
