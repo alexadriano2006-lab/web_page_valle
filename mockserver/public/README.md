@@ -22,6 +22,7 @@ Para abrir o painel demonstrativo, execute `npm run start:admin` e acesse `http:
 - `styles/ficha-veiculo.css`: fichas dos veículos.
 - `scripts/menu.js`: menu em telas menores, normalização dos endereços com `index.html` e animações de entrada com respeito à preferência por movimento reduzido.
 - `scripts/veiculos.js`: abertura e fechamento do modal com as fichas dos veículos.
+- `scripts/inicio.js`: troca das três imagens da frota a cada 4 segundos no mobile, com deslize manual e pausa durante a interação, com a aba oculta ou com preferência por movimento reduzido.
 
 Os perfis de redes sociais estão vinculados no rodapé. Não há formulário de cotação nem backend integrado; os botões de contato direcionam para o WhatsApp.
 

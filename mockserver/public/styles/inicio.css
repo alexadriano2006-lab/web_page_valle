@@ -33,6 +33,33 @@
   object-position: center;
 }
 
+.carrossel-mobile {
+  display: none;
+  border-bottom: 3px solid var(--laranja);
+  background: #fff5ee;
+}
+
+.slides-frota {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.slides-frota > img {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  aspect-ratio: 1672 / 941;
+  object-fit: contain;
+  scroll-snap-align: start;
+}
+
+.slides-frota:focus-visible {
+  outline: 3px solid var(--laranja);
+  outline-offset: -3px;
+}
+
 .faixa-servicos {
   display: flex;
   flex-wrap: wrap;
@@ -263,6 +290,14 @@
 }
 
 @media (max-width: 900px) {
+  .imagem-destaque {
+    display: none;
+  }
+
+  .carrossel-mobile {
+    display: block;
+  }
+
   .faixa-servicos {
     display: none;
   }
@@ -296,10 +331,6 @@
 }
 
 @media (max-width: 640px) {
-  .imagem-destaque img {
-    height: 330px;
-  }
-
   .introducao-site {
     grid-template-columns: 1fr;
     gap: 28px;

@@ -6,8 +6,9 @@
     <meta name="description" content="Conheça a Valle Viação e planeje o transporte do seu grupo.">
     <title>Valle Viação | Seu destino, nosso compromisso</title>
     <link rel="stylesheet" href="styles.css?v=14a4cc9a36">
-    <link rel="stylesheet" href="styles/inicio.css">
+    <link rel="stylesheet" href="styles/inicio.css?v=cad989196c">
     <script src="scripts/menu.js" defer></script>
+    <script src="scripts/inicio.js?v=d64008d3ca" defer></script>
       <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 </head>
   <body>
@@ -48,11 +49,15 @@
     <main id="conteudo">
       <section class="destaque-inicial" id="inicio" aria-label="Frota Valle em destaque">
         <figure class="imagem-destaque">
-          <picture>
-            <source media="(max-width: 640px)" srcset="img/van-valle-placa-coberta.png" width="1672" height="941">
-            <img src="img/frota-valle-destaque-v2.png" alt="Veículos da frota Valle Viação" width="1672" height="941" fetchpriority="high">
-          </picture>
+          <img src="img/frota-valle-destaque-v2.png" alt="Veículos da frota Valle Viação" width="1672" height="941" fetchpriority="high">
         </figure>
+        <div class="carrossel-mobile" role="region" aria-roledescription="carrossel" aria-label="Imagens da frota">
+          <div class="slides-frota" id="slides-frota" tabindex="0" aria-label="Deslize para ver os veículos">
+            <img src="img/van-valle-placa-coberta.png" alt="Mercedes-Benz Sprinter Mart M7 da Valle Viação" width="1672" height="941">
+            <img src="img/volare-fly10-placa-coberta.png" alt="Volare Fly 10 da Valle Viação" width="1672" height="941" loading="lazy">
+            <img src="img/volare-v8-placa-coberta.png" alt="Marcopolo Volare V8 da Valle Viação" width="1671" height="941" loading="lazy">
+          </div>
+        </div>
       </section>
 
       <nav class="faixa-servicos" aria-label="Tipos de transporte">
