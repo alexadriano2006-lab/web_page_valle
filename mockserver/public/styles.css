@@ -583,9 +583,8 @@ h3 {
     border: 0;
     border-radius: 6px;
     background: transparent;
-    color: var(--branco);
+    color: var(--azul-cabecalho);
     cursor: pointer;
-    transition: background 0.2s ease;
   }
 
   .botao-menu svg {
@@ -595,11 +594,6 @@ h3 {
     stroke: currentColor;
     stroke-width: 2;
     stroke-linecap: round;
-  }
-
-  .botao-menu:hover,
-  .botao-menu[aria-expanded="true"] {
-    background: var(--azul-cabecalho);
   }
 
   .navegacao-principal {
@@ -612,7 +606,7 @@ h3 {
     justify-content: flex-start;
     align-items: stretch;
     gap: 8px;
-    width: calc(100% - var(--inicio-laranja));
+    width: 45vw;
     height: calc(100vh - var(--altura-cabecalho));
     height: calc(100dvh - var(--altura-cabecalho));
     overflow-y: auto;
