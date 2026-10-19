@@ -49,9 +49,9 @@
   flex: 0 0 100%;
   width: 100%;
   min-width: 0;
-  height: auto;
-  aspect-ratio: 1672 / 941;
-  object-fit: contain;
+  height: clamp(260px, 72vw, 420px);
+  object-fit: cover;
+  object-position: center;
   scroll-snap-align: start;
 }
 
