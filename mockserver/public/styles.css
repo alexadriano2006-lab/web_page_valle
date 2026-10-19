@@ -551,6 +551,7 @@ h3 {
 
   .cabecalho {
     --diagonal-cabecalho: 40px;
+    --inicio-laranja: 42%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -563,7 +564,7 @@ h3 {
 
   .cabecalho::before,
   .cabecalho::after {
-    inset: 0 0 0 42%;
+    inset: 0 0 0 var(--inicio-laranja);
   }
 
   .cabecalho-contatos {
@@ -611,7 +612,7 @@ h3 {
     justify-content: flex-start;
     align-items: stretch;
     gap: 8px;
-    width: min(100px, 32vw);
+    width: calc(100% - var(--inicio-laranja));
     height: calc(100vh - var(--altura-cabecalho));
     height: calc(100dvh - var(--altura-cabecalho));
     overflow-y: auto;
